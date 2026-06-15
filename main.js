@@ -32,21 +32,6 @@ function validarUsuario(usuario) {
     mensaje: "El usuario es válido." 
   };
 }
-
+module.exports = validarUsuario;
 // --- Ejemplos de uso ---
 
-const usuarioValido = { nombre: "Ana", edad: 25, correo: "ana@email.com" };
-console.log(validarUsuario(usuarioValido)); 
-// { valido: true, mensaje: 'El usuario es válido.' }
-
-const usuarioSinNombre = { nombre: "   ", edad: 20, correo: "juan@email.com" };
-console.log(validarUsuario(usuarioSinNombre)); 
-// { valido: false, mensaje: 'El nombre no puede estar vacío.' }
-
-const usuarioMenor = { nombre: "Carlos", edad: 16, correo: "carlos@email.com" };
-console.log(validarUsuario(usuarioMenor)); 
-// { valido: false, mensaje: 'La edad debe ser mayor o igual a 18 años.' }
-
-const usuarioCorreoInvalido = { nombre: "Laura", edad: 30, correo: "laura_email.com" };
-console.log(validarUsuario(usuarioCorreoInvalido)); 
-// { valido: false, mensaje: "El correo electrónico debe ser válido y contener el símbolo '@'." }
